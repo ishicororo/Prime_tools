@@ -5,8 +5,8 @@ const contents={
      prime_code : document.getElementById("prime_code"),
 };
 function show(content){
-     document.getElementsByClassName("open").classList.add("close");
-     document.getElementsByClassName("open").classList.remove("open");
+     document.getElementsByClassName("open")[0].classList.add("close");
+     document.getElementsByClassName("open")[0].classList.remove("open");
      content.classList.add("open");
      content.classList.remove("close");
 }
