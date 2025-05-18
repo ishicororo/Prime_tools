@@ -39,13 +39,23 @@ function create(){
      const method=document.getElementById("create_method").value;
      const number=document.getElementById("create").value;
      const result=document.getElementById("created");
-     let isprime=true;
+     let result_number;
      if(method===digit){
-          for(let test=10**(number+1);test.toString().length>number;test--){
+          for(let test=10**(number+1)-3;String(test).length=number;test--){
                if(check(number)){
-                    result.textContent=number;
+                    result_number=String(test);
                     break;
                }
           }
+          result.textContent=test;
      }
-}
+     else{
+          for(let test=number;String(test).length=number;test--){
+               if(check(number)){
+                    result_number=String(test);
+                    break;
+               }
+          }
+          result.textContent=test;
+     }
+     }
