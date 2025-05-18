@@ -13,30 +13,13 @@
    }
     .home{
     margin-top: 150px;
-    position:fixed;
-    z-index: 10;
     }
     .prime_check{
-        position: fixed;
         display: none;
     }
     .prime_create{
-        position: fixed;
-        display: none;
-    }
-    main{
-        margin-top: 70px;
-
-    }
-    .prime_check{
-        position: fixed;
-        display: none;
-    }
-    .prime_create{
-        position: fixed;
         display: none;
     }
     .prime_code{
-        position: fixed;
         display: none;
     }
