@@ -16,7 +16,7 @@ function check(){
      let isprime=true;
      for(let prime of primes){
           if(prime<=Math.sqrt(number)){
-               if(number%prime){
+               if(number%prime===0){
                     isprime=false;
                     break;
                }
