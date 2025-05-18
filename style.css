@@ -24,4 +24,6 @@
     }
     #home p{
         font-size: 30px;
+        background-color: #999;
+        border-radius: 10px;
     }
