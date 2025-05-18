@@ -14,7 +14,6 @@
         color: white;
    }
     .open{
-        margin-top: 60px;
         display: block;
     }
     .close{
@@ -23,6 +22,6 @@
     main{
         margin-top: 60px;
     }
-    .home p{
+    #home p{
         font-size: 30px;
     }
