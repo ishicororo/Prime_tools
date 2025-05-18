@@ -4,7 +4,7 @@ const contents={
      prime_create : document.getElementById("prime_create"),
      prime_code : document.getElementById("prime_code"),
 };
-function open(content){
+function show(content){
      document.getElementsByClassName("open").classList.add("close");
      document.getElementsByClassName("open").classList.remove("open");
      content.classList.add("open");
