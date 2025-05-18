@@ -1,5 +1,4 @@
-    header p{
-        color:white; 
+    header{
         display: flex;
         justify-content: space-around;
         position: fixed;
@@ -7,6 +6,10 @@
         height: 50px;
         width: 100%;
         margin-top: 0%;
+   }
+   header p{
+        background-color: #000;
+        color: white;
    }
     .open{
         margin-top: 60px;
