@@ -10,3 +10,7 @@ function show(content){
      content.classList.add("open");
      content.classList.remove("close");
 };
+function check(){
+     const number=document.getElementById("check").value;
+     const result=document.getElementById("checked");
+}

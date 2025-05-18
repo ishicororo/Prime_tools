@@ -23,7 +23,7 @@
   <div class="close" id="prime_check">
     <h1>prime check</h1>
     <input id="check" type="number" placeholder="判定したい数字を入力">
-    <button>判定</button>
+    <button onclick="check">判定</button>
     <p id="checked"></p>
   </div>
   <div class="close" id="prime_create">
@@ -33,16 +33,17 @@
       <option>指定した数の最大の素数を生成</option>
     </select> 
     <input  id="create" type="number" placeholder="生成したい桁数を入力">
-    <button>生成</button>
+    <button onclick="create()">生成</button>
     <p id="created"></p>
   </div>
   <div class="close" id="prime_code">
     <h1>prime code decipher&create</h1>
     <input type="text" placeholder="暗号化したい文字列を入力" id="code_text">
     <input type="text" placeholder="鍵となる数字、文字列を入力　10文字以内" id="code_key">
-    <button>実行</button>
+    <button onclick="execute()">実行</button>
   </div>
   </main>
+  <script src="primes.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
