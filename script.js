@@ -12,7 +12,7 @@ function show(content){
 }
 const foundation={
      create:function(bigin,end){
-          for(let test=bigin;test<=end;first++){
+          for(let test=bigin;test<=end;test++){
                let isprime=true;
                if(test<=primes[primes.length-1]**2){
                if(this.check(test)){
@@ -51,7 +51,7 @@ const foundation={
       }
       else{
           this.create(primes[primes.length-1],Math.sqrt(number));
-          this.check(number);
+          return this.check(number);
       }
      }
 };
@@ -81,7 +81,7 @@ function create(){
      }
      else{
           for(let test=number;String(test).length=number;test--){
-               if(foundation.check(number)){
+               if(foundation.check(test)){
                     result_number=String(test);
                     break;
                }
