@@ -3,7 +3,6 @@
     }
     header{
         color:white; 
-        margin-top: 10px;
         display: flex;
         justify-content: space-around;
         position: fixed;
@@ -11,15 +10,10 @@
         height: 50px;
         width: 100%;
    }
-    .home{
-    margin-top: 150px;
+    .open{
+        margin-top: 60px;
+        display: block;
     }
-    .prime_check{
-        display: none;
-    }
-    .prime_create{
-        display: none;
-    }
-    .prime_code{
+    .close{
         display: none;
     }

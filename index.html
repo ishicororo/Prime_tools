@@ -7,13 +7,13 @@
 </head>
 <body>
   <header>
-      <p>home</p>
-      <p>prime check</p>
-      <p>prime create</p>
-      <p>prime code decipher&create</p>
+      <p onclick="open(contents.home)">home</p>
+      <p onclick="open(contents.prime_check)">prime check</p>
+      <p onclick="open(contents.prime_create)">prime create</p>
+      <p onclick="open(contents.prime_code)">prime code decipher&create</p>
   </header>
   <main>
-  <div id="home">
+  <div class="open" id="home">
     <h1>home</h1>
   <h2>prime_tools</h2>
   <ul>
@@ -22,12 +22,12 @@
     <li>prime code decipher&create</li>
   </ul>
   </div>
-  <div id="prime_check">
+  <div class="close" id="prime_check">
     <h1>prime check</h1>
     <input id="check" type="number" placeholder="判定したい数字を入力">
     <p id="checked"></p>
   </div>
-  <div id="prime_create">
+  <div class="close" id="prime_create">
     <h1>prime_create</h1>
     <select id="create_method">
       <option selected>桁数で生成</option>
@@ -36,7 +36,7 @@
     <input  id="create" type="number" placeholder="生成したい桁数を入力">
     <p id="created"></p>
   </div>
-  <div id="prime_code">
+  <div class="close" id="prime_code">
     <h1>>prime code decipher&create</h1>
     <input type="text" placeholder="暗号化したい文字列を入力" id="code_text">
     <input type="text" placeholder="鍵となる数字、文字列を入力　10文字以内" id="code_key">
