@@ -14,12 +14,13 @@ const foundation={
      create:function(bigin,end){
           for(let test=bigin;test<=end;first++){
                let isprime=true;
+               for()
           }
      },
      check:function(number){
            let isprime=true;
            if(number<2){return false;}
-           else{
+           else if(Math.sqrt(number)<=primes[primes.length-1]){
            for(let prime of primes){
                 if(prime<=Math.sqrt(number)){
                      if(number%prime===0){
@@ -32,6 +33,10 @@ const foundation={
                 }
            }
            return isprime;
+      }
+      else{
+          primes.push(...this.create(primes[primes.length-1],Math.ceil(Math.sqrt(number))));
+          this.check(number);
       }
      }
 };
