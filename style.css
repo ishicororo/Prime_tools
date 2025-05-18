@@ -1,0 +1,31 @@
+  *{
+    background-color:azure;
+    }
+    header{
+        color:white; 
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        background-color: #000;
+        border-radius: 30px;
+        height: 50px;
+        width: 100%;
+   }
+　.home{
+    margin-top: 150px;
+    position:fixed;
+    z-index: 10;
+    }
+    .prime_check{
+        position: fixed;
+        display: none;
+    }
+    .prime_create{
+        position: fixed;
+        display: none;
+    }
+    main{
+        margin-top: 70px;
+
+    }

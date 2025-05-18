@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>prime_tool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+      <p>home</p>
+      <p>prime check</p>
+      <p>prime create</p>
+      <p>prime code decipher&create</p>
+  </header>
+  <main>
+  <div id="home">
+    <h1>home</h1>
+  <h2>prime_tools</h2>
+  <ul>
+    <li>prime check</li>
+    <li>prime create</li>
+    <li>prime code decipher&create</li>
+  </ul>
+  </div>
+  <div id="prime_check">
+    <h1>prime check</h1>
+    <input id="check" type="number" placeholder="判定したい数字を入力">
+    <p id="checked"></p>
+  </div>
+  <div id="prime_create">
+    <h1>prime_create</h1>
+    <select id="create_method">
+      <option selected>桁数で生成</option>
+      <option>指定した数の最大の素数を生成</option>
+    </select> 
+    <input  id="create" type="number" placeholder="生成したい桁数を入力">
+    <p id="created"></p>
+  </div>
+  </main>
+  <script src="renderer.js"></script>
+</body>
+</html>
