@@ -9,4 +9,5 @@ function show(content){
      document.getElementsByClassName("open")[0].classList.remove("open");
      content.classList.add("open");
      content.classList.remove("close");
-}
+};
+console.log("home要素：", document.getElementById("home"));
