@@ -10,4 +10,3 @@ function show(content){
      content.classList.add("open");
      content.classList.remove("close");
 };
-console.log("home要素：", document.getElementById("home"));
