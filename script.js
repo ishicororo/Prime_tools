@@ -10,9 +10,7 @@ function show(content){
      content.classList.add("open");
      content.classList.remove("close");
 }
-function check(){
-     const number=document.getElementById("check").value;
-     const result=document.getElementById("checked");
+function check(number){
      let isprime=true;
      for(let prime of primes){
           if(prime<=Math.sqrt(number)){
@@ -25,10 +23,29 @@ function check(){
                break;
           }
      }
-     if(isprime){
+     return isprime;
+}
+function prime_check(){
+     const number=document.getElementById("check").value;
+     const result=document.getElementById("checked");
+     if(check(number)){
           result.textContent="素数です。";
      }
      else{
           result.textContent="素数ではありません。";
+     }
+}
+function create(){
+     const method=document.getElementById("create_method").value;
+     const number=document.getElementById("create").value;
+     const result=document.getElementById("created");
+     let isprime=true;
+     if(method===digit){
+          for(let test=10**(number+1);test.toString().length>number;test--){
+               if(check(number)){
+                    result.textContent=number;
+                    break;
+               }
+          }
      }
 }

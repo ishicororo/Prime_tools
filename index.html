@@ -23,14 +23,14 @@
   <div class="close" id="prime_check">
     <h1>prime check</h1>
     <input id="check" type="number" placeholder="判定したい数字を入力">
-    <button onclick="check()">判定</button>
+    <button onclick="prime_check()">判定</button>
     <p id="checked"></p>
   </div>
   <div class="close" id="prime_create">
     <h1>prime_create</h1>
     <select id="create_method">
-      <option selected>桁数で生成</option>
-      <option>指定した数の最大の素数を生成</option>
+      <option value="digit" selected>桁数で生成</option>
+      <option value="max">指定した数の最大の素数を生成</option>
     </select> 
     <input  id="create" type="number" placeholder="生成したい桁数を入力">
     <button onclick="create()">生成</button>
