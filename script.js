@@ -10,6 +10,7 @@ function show(content){
      content.classList.add("open");
      content.classList.remove("close");
 }
+const foundation;
 function check(number){
      let isprime=true;
      for(let prime of primes){
@@ -40,14 +41,14 @@ function create(){
      const number=document.getElementById("create").value;
      const result=document.getElementById("created");
      let result_number;
-     if(method===digit){
-          for(let test=10**(number+1)-3;String(test).length=number;test--){
-               if(check(number)){
+     if(method==="digit"){
+          for(let test=10**(number+1)-3;String(test).length===number;test--){
+               if(check(test)){
                     result_number=String(test);
                     break;
                }
           }
-          result.textContent=test;
+          result.textContent=result_number;
      }
      else{
           for(let test=number;String(test).length=number;test--){
@@ -56,6 +57,6 @@ function create(){
                     break;
                }
           }
-          result.textContent=test;
+          result.textContent=result_number;
      }
      }
