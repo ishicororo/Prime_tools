@@ -10,26 +10,35 @@ function show(content){
      content.classList.add("open");
      content.classList.remove("close");
 }
-const foundation;
-function check(number){
-     let isprime=true;
-     for(let prime of primes){
-          if(prime<=Math.sqrt(number)){
-               if(number%prime===0){
-                    isprime=false;
-                    break;
-               }
+const foundation={
+     create:function(bigin,end){
+          for(let test=bigin;test<=end;first++){
+               let isprime=true;
           }
-          else{
-               break;
-          }
+     },
+     check:function(number){
+           let isprime=true;
+           if(number<2){return false;}
+           else{
+           for(let prime of primes){
+                if(prime<=Math.sqrt(number)){
+                     if(number%prime===0){
+                          isprime=false;
+                          break;
+                     }
+                }
+                else{
+                     break;
+                }
+           }
+           return isprime;
+      }
      }
-     return isprime;
-}
-function prime_check(){
+};
+function check(){
      const number=document.getElementById("check").value;
      const result=document.getElementById("checked");
-     if(check(number)){
+     if(foundation.check(number)){
           result.textContent="素数です。";
      }
      else{
@@ -43,7 +52,7 @@ function create(){
      let result_number;
      if(method==="digit"){
           for(let test=10**(number+1)-3;String(test).length===number;test--){
-               if(check(test)){
+               if(foundation.check(test)){
                     result_number=String(test);
                     break;
                }
@@ -52,7 +61,7 @@ function create(){
      }
      else{
           for(let test=number;String(test).length=number;test--){
-               if(check(number)){
+               if(foundation.check(number)){
                     result_number=String(test);
                     break;
                }
