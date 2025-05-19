@@ -5,6 +5,7 @@ const contents={
      prime_create : document.getElementById("prime_create"),
      prime_code : document.getElementById("prime_code"),
      newInput:document.getElementById("newInput"),
+     primesSet:new Set(primes),
 }
 function show(content){
      document.getElementsByClassName("open")[0].classList.add("close");
@@ -13,7 +14,7 @@ function show(content){
      content.classList.remove("close");
 }
 function psCreate(){
-     if(document.getElementById("create_method").value===primesCreate){
+     if(document.getElementById("create_method").value==="primesCreate"){
           newInput.classList.remove("close");
      }
 }
@@ -23,6 +24,7 @@ const foundation={
           for(let test=primes[primes.length-1]+2;test<=max;test+=2){
                if(this.check(test)){
                     primes.push(test);
+                    primesSet.add(test);
                }
           }
      },
@@ -30,7 +32,7 @@ const foundation={
            let isprime=true;
            if(number<2){return false;}
            else if(number<=primes[primes.length-1]){
-               if(new Set(primes).has(number)){
+               if(primesSet.has(number)){
                     return true;
                }
            }
@@ -58,7 +60,7 @@ const foundation={
           if(end%2===0){
                end=end+1;
           }
-          for(let addNumber=end;addNumber>=bigin;end-=2){
+          for(let addNumber=end;addNumber>=bigin;addNumber-=2){
                if(this.check(addNumber)){
                     newPrimes.push(addNumber);
                }
