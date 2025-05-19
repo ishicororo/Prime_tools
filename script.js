@@ -107,7 +107,7 @@ function create(){
      }
      else if(method==="max"){
           if(number%2===0){
-               number=number+1;
+               number=number-1;
           }
           for(let test=number;test>=0;test-=2){
                if(foundation.check(test)){
