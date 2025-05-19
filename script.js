@@ -45,6 +45,18 @@ const foundation={
           return this.check(number);
       }
      },
+     create:function(bigin,end){
+          let newPrimes=[];
+          if(end%2===0){
+               end=end+1;
+          }
+          for(let addNumber=end;addNumber>=bigin;end-2){
+               if(this.check(addNumber)){
+                    newPrimes.push(addNumber);
+               }
+          }
+          return newPrimes;
+     }
      };
 function check(){
      const number=document.getElementById("check").value;
@@ -58,25 +70,32 @@ function check(){
 }
 function create(){
      const method=document.getElementById("create_method").value;
-     const number=Number(document.getElementById("create").value);
+     let number=Number(document.getElementById("create").value);
+     let number2=Number(document.getElementById("create2").value)
      const result=document.getElementById("created");
      let result_number;
      if(method==="digit"){
-          for(let test=10**(number+1)-3;String(test).length===number;test--){
+          for(let test=10**(number+1)-3;String(test).length===number;test-2){
                if(foundation.check(test)){
-                    result_number=String(test);
+                    result_number=test;
                     break;
                }
           }
           result.textContent=result_number;
      }
-     else{
-          for(let test=number;String(test).length===number;test--){
+     else if(method==="max"){
+          if(number%2===0){
+               number=number+1;
+          }
+          for(let test=number;test>=0;test-2){
                if(foundation.check(test)){
-                    result_number=String(test);
+                    result_number=test;
                     break;
                }
           }
           result.textContent=result_number;
+     }
+     else if(method==="primesCreate"){
+          let newPrimes=foundation.create(number,number2);
      }
      }
