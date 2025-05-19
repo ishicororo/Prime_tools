@@ -20,11 +20,12 @@ function method(){
           contents.newInput.classList.remove("close");
      }
      else if(CreateMethod==="max"){
-          contents.input.placeholder="最大値を入力してください。";
+          contents.input.placeholder="最大値を入力";
           contents.newInput.classList.add("close");
      }
      else{
           contents.newInput.classList.add("close");
+          contents.input.placeholder="生成したい桁数を入力"
      }
 }
 //ここからメイン関数
