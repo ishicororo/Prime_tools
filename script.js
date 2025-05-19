@@ -18,7 +18,7 @@ function method(){
      const CreateMethod=document.getElementById("createMethod").value;
      if(CreateMethod==="primesCreate"){
           contents.newInput.classList.remove("close");
-          contents.newInput.value="1";
+          contents.input.value="1";
      }
      else if(CreateMethod==="max"){
           contents.input.placeholder="最大値を入力";
