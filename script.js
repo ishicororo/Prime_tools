@@ -11,32 +11,21 @@ function show(content){
      content.classList.remove("close");
 }
 const foundation={
-     create:function(bigin,end){
-          let newPrimes=[];
-          for(let test=bigin;test<=end;test++){
-               let isprime=true;
-               if(test<=primes[primes.length-1]**2){
+     addPrimes:function(max){
+          for(let test=primes[primes.length-1]+2;test<=max;test+2){
                if(this.check(test)){
-                    newPrimes.push(test);
-               }
-               else{
-                    for(let i=2;i<=Math.sqrt(test);i++){
-                         if(test%i===0){
-                              isprime=false;
-                              break;
-                         }
-                    }
-                    if(isprime){
-                         newPrimes.push(test);
-                    }
+                    primes.push(test);
                }
           }
-     }
-     return newPrimes;
      },
      check:function(number){
            let isprime=true;
            if(number<2){return false;}
+           else if(number<=primes[primes.length-1]){
+               if(primes.includes(number)){
+                    return true;
+               }
+           }
            else if(Math.sqrt(number)<=primes[primes.length-1]){
            for(let prime of primes){
                 if(prime<=Math.sqrt(number)){
@@ -52,11 +41,11 @@ const foundation={
            return isprime;
       }
       else{
-          primes.push(...this.create(primes[primes.length-1]+1,Math.sqrt(number)));
+          this.addPrimes(Math.sqrt(number));
           return this.check(number);
       }
-     }
-};
+     },
+     };
 function check(){
      const number=document.getElementById("check").value;
      const result=document.getElementById("checked");
