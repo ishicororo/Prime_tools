@@ -17,6 +17,7 @@ function psCreate(){
           newInput.classList.remove("close");
      }
 }
+//ここからメイン関数
 const foundation={
      addPrimes:function(max){
           for(let test=primes[primes.length-1]+2;test<=max;test+=2){
@@ -65,6 +66,7 @@ const foundation={
           return newPrimes;
      }
      };
+     //ここから実際の操作
 function check(){
      const number=document.getElementById("check").value;
      const result=document.getElementById("checked");
