@@ -4,8 +4,9 @@ const contents={
      prime_check : document.getElementById("prime_check"),
      prime_create : document.getElementById("prime_create"),
      prime_code : document.getElementById("prime_code"),
-     newInput:document.getElementById("newInput"),
      primesSet:new Set(primes),
+     input:document.getElementById("create"),
+     newInput:document.getElementById("newInput"),
 }
 function show(content){
      document.getElementsByClassName("open")[0].classList.add("close");
@@ -13,9 +14,17 @@ function show(content){
      content.classList.add("open");
      content.classList.remove("close");
 }
-function psCreate(){
-     if(document.getElementById("create_method").value==="primesCreate"){
+function method(){
+     const CreateMethod=document.getElementById("createMethod").value;
+     if(CreateMethod==="primesCreate"){
           contents.newInput.classList.remove("close");
+     }
+     else if(CreateMethod==="max"){
+          contents.input.placeholder="最大値を入力してください。";
+          contents.newInput.classList.add("close");
+     }
+     else{
+          contents.newInput.classList.add("close");
      }
 }
 //ここからメイン関数
