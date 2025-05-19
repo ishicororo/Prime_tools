@@ -12,11 +12,12 @@ function show(content){
 }
 const foundation={
      create:function(bigin,end){
+          let newPrimes=[];
           for(let test=bigin;test<=end;test++){
                let isprime=true;
                if(test<=primes[primes.length-1]**2){
                if(this.check(test)){
-                    primes.push(test);
+                    newPrimes.push(test);
                }
                else{
                     for(let i=2;i<=Math.sqrt(test);i++){
@@ -26,11 +27,12 @@ const foundation={
                          }
                     }
                     if(isprime){
-                         primes.push(test);
+                         newPrimes.push(test);
                     }
                }
           }
      }
+     return newPrimes;
      },
      check:function(number){
            let isprime=true;
@@ -50,7 +52,7 @@ const foundation={
            return isprime;
       }
       else{
-          this.create(primes[primes.length-1],Math.sqrt(number));
+          primes.push(...this.create(primes[primes.length-1]+1,Math.sqrt(number)));
           return this.check(number);
       }
      }
@@ -67,7 +69,7 @@ function check(){
 }
 function create(){
      const method=document.getElementById("create_method").value;
-     const number=document.getElementById("create").value;
+     const number=Number(document.getElementById("create").value);
      const result=document.getElementById("created");
      let result_number;
      if(method==="digit"){
@@ -80,7 +82,7 @@ function create(){
           result.textContent=result_number;
      }
      else{
-          for(let test=number;String(test).length=number;test--){
+          for(let test=number;String(test).length===number;test--){
                if(foundation.check(test)){
                     result_number=String(test);
                     break;
