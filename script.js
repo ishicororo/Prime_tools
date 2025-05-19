@@ -12,7 +12,7 @@ function show(content){
 }
 const foundation={
      addPrimes:function(max){
-          for(let test=primes[primes.length-1]+2;test<=max;test+2){
+          for(let test=primes[primes.length-1]+2;test<=max;test+=2){
                if(this.check(test)){
                     primes.push(test);
                }
@@ -22,7 +22,7 @@ const foundation={
            let isprime=true;
            if(number<2){return false;}
            else if(number<=primes[primes.length-1]){
-               if(primes.includes(number)){
+               if(new Set(primes).has(number)){
                     return true;
                }
            }
@@ -50,7 +50,7 @@ const foundation={
           if(end%2===0){
                end=end+1;
           }
-          for(let addNumber=end;addNumber>=bigin;end-2){
+          for(let addNumber=end;addNumber>=bigin;end-=2){
                if(this.check(addNumber)){
                     newPrimes.push(addNumber);
                }
@@ -75,7 +75,7 @@ function create(){
      const result=document.getElementById("created");
      let result_number;
      if(method==="digit"){
-          for(let test=10**(number+1)-3;String(test).length===number;test-2){
+          for(let test=10**(number+1)-3;String(test).length===number;test-=2){
                if(foundation.check(test)){
                     result_number=test;
                     break;
@@ -87,7 +87,7 @@ function create(){
           if(number%2===0){
                number=number+1;
           }
-          for(let test=number;test>=0;test-2){
+          for(let test=number;test>=0;test-=2){
                if(foundation.check(test)){
                     result_number=test;
                     break;
