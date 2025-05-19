@@ -28,19 +28,20 @@
   </div>
   <div class="close" id="prime_create">
     <h1>prime_create</h1>
-    <select id="create_method">
+    <select id="create_method" onchange="psCreate()">
       <option value="digit" selected>桁数で生成</option>
       <option value="max">指定した数以下の最大の素数を生成</option>
       <option value="primesCreate">指定した範囲の素数配列を生成、保存</option>
     </select> 
     <input  id="create" type="number" placeholder="生成したい桁数を入力">
+    <input type="number" id="newInput" placeholder="終了値を入力">
     <button onclick="create()">生成</button>
     <p id="created"></p>
   </div>
   <div class="close" id="prime_code">
     <h1>prime code decipher&create</h1>
     <input type="text" placeholder="暗号化したい文字列を入力" id="code_text">
-    <input type="text" placeholder="鍵となる数字、文字列を入力　10文字以内" id="code_key">
+    <input type="text" placeholder="鍵となる数字、文字列を入力　10文字以内" id="code_key" class="close">
     <button onclick="execute()">実行</button>
   </div>
   </main>

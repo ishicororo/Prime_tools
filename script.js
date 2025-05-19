@@ -1,14 +1,21 @@
+//ここからコンテンツの表示
 const contents={
      home : document.getElementById("home"),
      prime_check : document.getElementById("prime_check"),
      prime_create : document.getElementById("prime_create"),
      prime_code : document.getElementById("prime_code"),
+     newInput:document.getElementById("newInput"),
 }
 function show(content){
      document.getElementsByClassName("open")[0].classList.add("close");
      document.getElementsByClassName("open")[0].classList.remove("open");
      content.classList.add("open");
      content.classList.remove("close");
+}
+function psCreate(){
+     if(document.getElementById("create_method").value===primesCreate){
+          newInput.classList.remove("close");
+     }
 }
 const foundation={
      addPrimes:function(max){
@@ -71,7 +78,7 @@ function check(){
 function create(){
      const method=document.getElementById("create_method").value;
      let number=Number(document.getElementById("create").value);
-     let number2=Number(document.getElementById("create2").value)
+     let number2=Number(document.getElementById("newInput").value)
      const result=document.getElementById("created");
      let result_number;
      if(method==="digit"){
@@ -97,5 +104,6 @@ function create(){
      }
      else if(method==="primesCreate"){
           let newPrimes=foundation.create(number,number2);
+          result.textContent=newPrimes;
      }
      }
