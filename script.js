@@ -62,7 +62,7 @@ const foundation={
            return isprime;
       }
       else{
-          this.addPrimes(Math.sqrt(number));
+          this.addPrimes(Math.ceil(Math.sqrt(number)));
           return this.check(number);
       }
      },
