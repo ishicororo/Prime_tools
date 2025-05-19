@@ -15,7 +15,7 @@ function show(content){
 }
 function psCreate(){
      if(document.getElementById("create_method").value==="primesCreate"){
-          newInput.classList.remove("close");
+          contents.newInput.classList.remove("close");
      }
 }
 //ここからメイン関数
@@ -24,7 +24,7 @@ const foundation={
           for(let test=primes[primes.length-1]+2;test<=max;test+=2){
                if(this.check(test)){
                     primes.push(test);
-                    primesSet.add(test);
+                    contents.primesSet.add(test);
                }
           }
      },
