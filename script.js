@@ -41,7 +41,7 @@ const foundation={
            let isprime=true;
            if(number<2){return false;}
            else if(number<=primes[primes.length-1]){
-               if(primesSet.has(number)){
+               if(contents.primesSet.has(number)){
                     return true;
                }
            }
@@ -79,7 +79,7 @@ const foundation={
      };
      //ここから実際の操作
 function check(){
-     const number=document.getElementById("check").value;
+     const number=Number(document.getElementById("check").value);
      const result=document.getElementById("checked");
      if(foundation.check(number)){
           result.textContent="素数です。";
@@ -89,7 +89,7 @@ function check(){
      }
 }
 function create(){
-     const method=document.getElementById("create_method").value;
+     const method=document.getElementById("createMethod").value;
      let number=Number(document.getElementById("create").value);
      let number2=Number(document.getElementById("newInput").value)
      const result=document.getElementById("created");
