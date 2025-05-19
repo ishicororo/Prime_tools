@@ -97,7 +97,7 @@ function create(){
      const result=document.getElementById("created");
      let result_number;
      if(method==="digit"){
-          for(let test=10**(number+1)-3;String(test).length===number;test-=2){
+          for(let test=10**number-3;String(test).length===number;test-=2){
                if(foundation.check(test)){
                     result_number=test;
                     break;
