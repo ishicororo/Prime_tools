@@ -76,7 +76,7 @@ const foundation={
                     newPrimes.push(addNumber);
                }
           }
-          return newPrimes;
+          return reverse(newPrimes);
      }
      };
      //ここから実際の操作
