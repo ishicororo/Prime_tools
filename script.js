@@ -32,7 +32,7 @@ function method(){
 //ここからメイン関数
 const foundation={
      addPrimes:function(max){
-          for(let test=primes[primes.length-1]+2;test<=max;test+=2){
+          for(let test=primes[primes.length-1]+2;test<max;test+=2){
                if(this.check(test)){
                     primes.push(test);
                     contents.primesSet.add(test);
