@@ -80,7 +80,7 @@ const foundation={
                     newPrimes.push(addNumber);
                }
           }
-          return newPrimes.reverse;
+          return newPrimes.reverse();
      }
      };
      //ここから実際の操作
