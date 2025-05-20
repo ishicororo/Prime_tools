@@ -26,11 +26,13 @@ function method(){
           contents.input.placeholder="最大値を入力";
           contents.newInput.classList.add("close");
           contents.input.value="";
+          contents.downloadLink.classList.remove("close");
      }
      else{
           contents.newInput.classList.add("close");
           contents.input.placeholder="生成したい桁数を入力"
           contents.input.value="";
+          contents.downloadLink.classList.remove("close");
      }
 }
 //ここからメイン関数
@@ -125,8 +127,8 @@ function create(){
           let newPrimes=foundation.create(number,number2);
           const blob=new Blob([newPrimes],{type:"text/plain"});
           const url=URL.createObjectURL(blob);
-          downloadLink.href=url;
-          downloadLink.classList.remove("close");
+          contents.downloadLink.href=url;
+          contents.downloadLink.classList.remove("close");
           setTimeout(()=>URL.revokeObjectURL(url),60000);
      }
      }
