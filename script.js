@@ -19,14 +19,17 @@ function method(){
      if(CreateMethod==="primesCreate"){
           contents.newInput.classList.remove("close");
           contents.input.value="1";
+          contents.input.placeholder="開始値を入力"
      }
      else if(CreateMethod==="max"){
           contents.input.placeholder="最大値を入力";
           contents.newInput.classList.add("close");
+          contents.input.value="";
      }
      else{
           contents.newInput.classList.add("close");
           contents.input.placeholder="生成したい桁数を入力"
+          contents.input.value="";
      }
 }
 //ここからメイン関数
