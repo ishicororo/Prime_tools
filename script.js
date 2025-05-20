@@ -7,7 +7,7 @@ const contents={
      primesSet:new Set(primes),
      input:document.getElementById("create"),
      newInput:document.getElementById("newInput"),
-     downroadLink:document.getElementById("downroadLink"),
+     downloadLink:document.getElementById("downloadLink"),
 }
 function show(content){
      document.getElementsByClassName("open")[0].classList.add("close");
@@ -19,6 +19,7 @@ function method(){
      const CreateMethod=document.getElementById("createMethod").value;
      if(CreateMethod==="primesCreate"){
           contents.newInput.classList.remove("close");
+          contents.downloadLink.classList.remove("close");
           contents.input.value="1";
           contents.input.placeholder="開始値を入力";
      }
