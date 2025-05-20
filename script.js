@@ -19,7 +19,6 @@ function method(){
      const CreateMethod=document.getElementById("createMethod").value;
      if(CreateMethod==="primesCreate"){
           contents.newInput.classList.remove("close");
-          contents.downloadLink.classList.remove("close");
           contents.input.value="1";
           contents.input.placeholder="開始値を入力";
      }
@@ -125,5 +124,10 @@ function create(){
      else if(method==="primesCreate"){
           let newPrimes=foundation.create(number,number2);
           result.textContent=newPrimes;
+          const blob=new Blob([newPrimes],{type:"text/plain"});
+          const url=URL.createObjectURL(blob);
+          downloadLink.href=url;
+          downloadLink.classList.remove("close");
+          url.revokeObjectUrl(url);
      }
      }
