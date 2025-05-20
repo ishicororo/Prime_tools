@@ -11,7 +11,7 @@ const foundation={
           for(let test=primes[primes.length-1]+2;test<=max;test+=2){
                if(this.check(test)){
                     primes.push(test);
-                    contents.primesSet.add(test);
+                    variables.primesSet.add(test);
                }
           }
      },
@@ -19,7 +19,7 @@ const foundation={
            let isprime=true;
            if(number<2){return false;}
            else if(number<=primes[primes.length-1]){
-               if(contents.primesSet.has(number)){
+               if(variables.primesSet.has(number)){
                     return true;
                }
            }
@@ -55,8 +55,8 @@ const foundation={
           return newPrimes.reverse();
      },
      percentage:function(percentage){
-          contents.lodeContens.classList.remove("close");
-          contents.loadBar.style.width=`${percentage}%`;
-          contents.loadpercentage.textContent=`現在：${percentage}%です`;
+          variables.lodeContens.classList.remove("close");
+          variables.loadBar.style.width=`${percentage}%`;
+          variables.loadpercentage.textContent=`現在：${percentage}%です`;
      }
      };
