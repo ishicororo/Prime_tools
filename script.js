@@ -128,6 +128,6 @@ function create(){
           const url=URL.createObjectURL(blob);
           downloadLink.href=url;
           downloadLink.classList.remove("close");
-          url.revokeObjectUrl(url);
+          setTimeout(()=>URL.revokeObjectURL(url),60000);
      }
      }
