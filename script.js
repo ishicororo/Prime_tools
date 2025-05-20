@@ -1,42 +1,9 @@
 //ここからコンテンツの表示
-const contents={
-     home : document.getElementById("home"),
-     prime_check : document.getElementById("prime_check"),
-     prime_create : document.getElementById("prime_create"),
-     prime_code : document.getElementById("prime_code"),
+const variables={
      primesSet:new Set(primes),
-     input:document.getElementById("create"),
-     newInput:document.getElementById("newInput"),
-     downloadLink:document.getElementById("downloadLink"),
      lodeContens:document.getElementById("loadingMenu"),
      loadBar:document.getElementById("loadBar"),
      loadpercentage:document.getElementById("loadPercentage"),
-}
-function show(content){
-     document.getElementsByClassName("open")[0].classList.add("close");
-     document.getElementsByClassName("open")[0].classList.remove("open");
-     content.classList.add("open");
-     content.classList.remove("close");
-}
-function method(){
-     const CreateMethod=document.getElementById("createMethod").value;
-     if(CreateMethod==="primesCreate"){
-          contents.newInput.classList.remove("close");
-          contents.input.value="1";
-          contents.input.placeholder="開始値を入力";
-     }
-     else if(CreateMethod==="max"){
-          contents.input.placeholder="最大値を入力";
-          contents.newInput.classList.add("close");
-          contents.input.value="";
-          contents.downloadLink.classList.remove("close");
-     }
-     else{
-          contents.newInput.classList.add("close");
-          contents.input.placeholder="生成したい桁数を入力"
-          contents.input.value="";
-          contents.downloadLink.classList.remove("close");
-     }
 }
 //ここからメイン関数
 const foundation={
@@ -104,39 +71,3 @@ function check(){
           result.textContent="素数ではありません。";
      }
 }
-function create(){
-     const method=document.getElementById("createMethod").value;
-     let number=Number(document.getElementById("create").value);
-     let number2=Number(document.getElementById("newInput").value)
-     const result=document.getElementById("created");
-     let result_number;
-     if(method==="digit"){
-          for(let test=10**number-3;String(test).length===number;test-=2){
-               if(foundation.check(test)){
-                    result_number=test;
-                    break;
-               }
-          }
-          result.textContent=result_number;
-     }
-     else if(method==="max"){
-          if(number%2===0){
-               number=number-1;
-          }
-          for(let test=number;test>=0;test-=2){
-               if(foundation.check(test)){
-                    result_number=test;
-                    break;
-               }
-          }
-          result.textContent=result_number;
-     }
-     else if(method==="primesCreate"){
-          let newPrimes=foundation.create(number,number2);
-          const blob=new Blob([newPrimes],{type:"text/plain"});
-          const url=URL.createObjectURL(blob);
-          contents.downloadLink.href=url;
-          contents.downloadLink.classList.remove("close");
-          setTimeout(()=>URL.revokeObjectURL(url),60000);
-     }
-     }
