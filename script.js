@@ -8,6 +8,9 @@ const contents={
      input:document.getElementById("create"),
      newInput:document.getElementById("newInput"),
      downloadLink:document.getElementById("downloadLink"),
+     lodeContens:document.getElementById("loadingMenu"),
+     loadBar:document.getElementById("loadBar"),
+     loadpercentage:document.getElementById("loadPercentage"),
 }
 function show(content){
      document.getElementsByClassName("open")[0].classList.add("close");
@@ -83,6 +86,11 @@ const foundation={
                }
           }
           return newPrimes.reverse();
+     },
+     percentage:function(percentage){
+          contents.lodeContens.classList.remove("close");
+          contents.loadBar.style.width=`${percentage}%`;
+          contents.loadpercentage.textContent=`現在：${percentage}%です`;
      }
      };
      //ここから実際の操作

@@ -13,9 +13,6 @@
         background-color: #000;
         color: white;
    }
-    .open{
-        display: block;
-    }
     .close{
         display: none;
     }
@@ -29,3 +26,9 @@
         text-align: center;
         color: white;
     }
+    #loadingMenu #loadBar{
+        height: 5px;
+        width: 0;
+        background-color: skyblue;
+    }
+    
