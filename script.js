@@ -58,5 +58,6 @@ const foundation={
           variables.lodeContens.classList.remove("close");
           variables.loadBar.style.width=`${percentage}%`;
           variables.loadpercentage.textContent=`現在：${percentage}%です`;
+          //実行後のcloseを忘れないように
      }
      };
