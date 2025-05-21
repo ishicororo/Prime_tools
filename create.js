@@ -28,7 +28,7 @@ function create(){
      }
      else if(method==="primesCreate"){
           let newPrimes=foundation.create(number,number2);
-          if(newPrimes.length===100){
+          if(newPrimes.length<=100){
                result.textContent="ダウンロード期限は5分です。"+newPrimes;
           }
           else{
