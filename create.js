@@ -1,4 +1,3 @@
-const downloadlink=document.getElementById("downloadLink");
 function create(){
      const method=document.getElementById("createMethod").value;
      let number=Number(document.getElementById("create").value);
@@ -36,8 +35,8 @@ function create(){
           }
           const blob=new Blob([newPrimes],{type:"text/plain"});
           const url=URL.createObjectURL(blob);
-          downloadLink.href=url;
-          downloadLink.classList.remove("close");
+          CPvariable.downloadLink.href=url;
+          CPvariable.downloadLink.classList.remove("close");
           setTimeout(()=>URL.revokeObjectURL(url),300000);
      }
      }
