@@ -1,6 +1,7 @@
 const CPvariable={
     input:document.getElementById("create"),
     newInput:document.getElementById("newInput"),
+    downloadlink:document.getElementById("downloadLink")
 }
 function method(){
      const CreateMethod=document.getElementById("createMethod").value;
@@ -13,12 +14,12 @@ function method(){
           CPvariable.input.placeholder="最大値を入力";
           CPvariable.newInput.classList.add("close");
           CPvariable.input.value="";
-          CPvariable.downloadLink.classList.remove("close");
+          CPvariable.downloadLink.classList.add("close");
      }
      else{
           CPvariable.newInput.classList.add("close");
           CPvariable.input.placeholder="生成したい桁数を入力"
           CPvariable.input.value="";
-          CPvariable.downloadLink.classList.remove("close");
+          CPvariable.downloadLink.classList.add("close");
      }
 }
