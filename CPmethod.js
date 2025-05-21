@@ -1,7 +1,7 @@
 const CPvariable={
     input:document.getElementById("create"),
     newInput:document.getElementById("newInput"),
-    downloadlink:document.getElementById("downloadLink"),
+    downloadLink:document.getElementById("downloadLink"),
 }
 function method(){
      const CreateMethod=document.getElementById("createMethod").value;
