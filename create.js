@@ -14,9 +14,11 @@ function create(){
           result.textContent=result_number;
      }
      else if(method==="max"){
+          if(number!==2){
           if(number%2===0){
                number=number-1;
           }
+     }
           for(let test=number;test>=0;test-=2){
                if(foundation.check(test)){
                     result_number=test;

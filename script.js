@@ -44,9 +44,11 @@ const foundation={
      },
      create:function(bigin,end){
           let newPrimes=[];
+          if(end!==2){
           if(end%2===0){
                end=end-1;
           }
+     }
           for(let addNumber=end;addNumber>=bigin;addNumber-=2){
                if(this.check(addNumber)){
                     newPrimes.push(addNumber);
