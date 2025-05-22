@@ -23,9 +23,6 @@ const foundation={
                     return true;
                }
            }
-           else if(number===2){
-               return true;
-           }
            else if(Math.sqrt(number)<=primes[primes.length-1]){
            for(let prime of primes){
                 if(prime<=Math.sqrt(number)){
