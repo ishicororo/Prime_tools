@@ -44,15 +44,16 @@ const foundation={
      },
      create:function(bigin,end){
           let newPrimes=[];
-          if(end!==2){
-          if(end%2===0){
-               end=end-1;
-          }
-     }
+               if(end%2===0){
+                    end-=1;
+               }
           for(let addNumber=end;addNumber>=bigin;addNumber-=2){
                if(this.check(addNumber)){
                     newPrimes.push(addNumber);
                }
+          }
+          if(bigin<=2&&end>=2){
+               newPrimes.push(2);
           }
           return newPrimes.reverse();
      },
@@ -61,5 +62,5 @@ const foundation={
           variables.loadBar.style.width=`${percentage}%`;
           variables.loadpercentage.textContent=`現在：${percentage}%です`;
           //実行後のcloseを忘れないように
-     }
+     },
      };

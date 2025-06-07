@@ -11,7 +11,7 @@ function create(){
                     break;
                }
           }
-          result.textContent=result_number;
+          result.textContent=`${number}桁：`+result_number;
      }
      else if(method==="max"){
           if(number!==2){
@@ -25,12 +25,12 @@ function create(){
                     break;
                }
           }
-          result.textContent=result_number;
+          result.textContent=`${number}以下の素数：`+result_number;
      }
      else if(method==="primesCreate"){
           let newPrimes=foundation.create(number,number2);
           if(newPrimes.length<=100){
-               result.textContent="ダウンロード期限は5分です。"+newPrimes;
+               result.textContent="ダウンロード期限は5分です。\n"+`${number}から${number2}:\n`+newPrimes;
           }
           else{
                result.textContent="素数配列が長いため、ダウンロードしてご使用ください。ダウンロード期限は5分です。"
