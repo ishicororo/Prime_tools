@@ -67,9 +67,9 @@ const foundation={
                     nowOrder+=1;
                     if(nowOrder===order){
                          return i;
-                    }
+                         break;
+                    }                    
                }
-               break;
           }
      },
      percentage:function(percentage){
