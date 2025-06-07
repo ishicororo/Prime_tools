@@ -14,6 +14,7 @@ function execute(){
                correspondenceTable.push(k);
           }
      }
+     console.log(keyBinaryArrayBuffer);
      console.log(correspondenceTable);
 }
 function returnCode(){
