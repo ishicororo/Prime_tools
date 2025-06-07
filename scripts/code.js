@@ -12,7 +12,10 @@ function execute(){
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
           for(j=Math.floor(225/keyBinaryArrayBuffer.length)*i;j<=Math.floor(225/keyBinaryArrayBuffer.length)*(i+1);j++){
                if(j===Math.floor(225/keyBinaryArrayBuffer.length)*i){
-                    correspondenceTable.
+                    correspondenceTable[j]=keyBinaryArrayBuffer[i];
+               }
+               else{
+                    correspondenceTable[j]=foundation.nextPrime()
                }
           }
      }

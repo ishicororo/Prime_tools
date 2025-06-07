@@ -57,6 +57,21 @@ const foundation={
           }
           return newPrimes.reverse();
      },
+     nextPrime:function(number,order){
+          let nowOrder=1;
+          if(number%2){
+               number+=1;
+          }
+          for(i=number;i>=0;i+=2){
+               if(this.check(i)){
+                    nowOrder+=1;
+                    if(nowOrder===order){
+                         return i;
+                    }
+               }
+               break;
+          }
+     },
      percentage:function(percentage){
           variables.lodeContens.classList.remove("close");
           variables.loadBar.style.width=`${percentage}%`;
