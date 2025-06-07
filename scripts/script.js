@@ -59,7 +59,7 @@ const foundation={
      },
      nextPrime:function(number,order){
           let nowOrder=0;
-          if(number%2){
+          if(number%2===0){
                number+=1;
           }
           for(let i=number;i>=0;i+=2){
