@@ -62,12 +62,11 @@ const foundation={
           if(number%2){
                number+=1;
           }
-          for(i=number;i>=0;i+=2){
+          for(let i=number;i>=0;i+=2){
                if(this.check(i)){
                     nowOrder+=1;
                     if(nowOrder===order){
                          return i;
-                         break;
                     }                    
                }
           }
