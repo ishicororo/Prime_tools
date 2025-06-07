@@ -19,6 +19,7 @@ function execute(){
                }
           }
      }
+     console.log(correspondenceTable);
 }
 function returnCode(){
 }
