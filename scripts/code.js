@@ -11,7 +11,7 @@ function execute(){
      let correspondenceTable=[0];
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
           for(let j=Math.floor(255/keyBinaryArrayBuffer.length)*i,k=keyBinaryArrayBuffer[i];j<=Math.floor(255/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
-               correspondenceTable.push(k);
+               correspondenceTable.push([i,k]);
           }
      }
      console.log(keyBinaryArrayBuffer);
