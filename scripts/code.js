@@ -8,14 +8,23 @@ function execute(){
      const decoder=new TextDecoder();
      const stringBinaryArrayBuffer=encoder.encode(codeVariables.codeText.value);
      const keyBinaryArrayBuffer=encoder.encode(codeVariables.codeKey.value);
+     let newStringBinaryArray=[];
      let correspondenceTable=[[0,0]];
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
           for(let j=Math.floor(255/keyBinaryArrayBuffer.length)*i,k=keyBinaryArrayBuffer[i];j<=Math.floor(255/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
-               correspondenceTable.push([i,k]);
+               if(k<=255){
+               correspondenceTable.push([i,0,k]);
+               }
+               else{
+               correspondenceTable.push([i,1,k])
+               }
           }
      }
      console.log(keyBinaryArrayBuffer);
      console.log(correspondenceTable);
+     for(let i of stringBinaryArrayBuffer){
+          newStringBinaryArray.push(...correspondenceTable[i]);
+     }
 }
 function returnCode(){
 }
