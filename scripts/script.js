@@ -58,9 +58,12 @@ const foundation={
           return newPrimes.reverse();
      },
      nextPrime:function(number,order){
-          let nowOrder=-1;
+          let nowOrder=0;
           if(number%2===0){
                number+=1;
+          }
+          else{
+               number+=2;
           }
           for(let i=number;i>=0;i+=2){
                if(this.check(i)){
