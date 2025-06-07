@@ -58,7 +58,7 @@ const foundation={
           return newPrimes.reverse();
      },
      nextPrime:function(number,order){
-          let nowOrder=1;
+          let nowOrder=0;
           if(number%2){
                number+=1;
           }

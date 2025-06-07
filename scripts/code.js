@@ -10,13 +10,8 @@ function execute(){
      const keyBinaryArrayBuffer=encoder.encode(codeVariables.codeKey.value);
      let correspondenceTable={};
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
-          for(let j=Math.floor(225/keyBinaryArrayBuffer.length)*i;j<=Math.floor(225/keyBinaryArrayBuffer.length)*(i+1);j++){
-               if(j===Math.floor(225/keyBinaryArrayBuffer.length)*i){
-                    correspondenceTable[j]=keyBinaryArrayBuffer[i];
-               }
-               else{
-                    correspondenceTable[j]=foundation.nextPrime()
-               }
+          for(let j=Math.floor(255/keyBinaryArrayBuffer.length)*i,k=j;j<=Math.floor(255/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
+               correspondenceTable[j]=k;
           }
      }
      console.log(correspondenceTable);
