@@ -19,7 +19,7 @@ function execute(){
                if(k<=255){
                correspondenceTable.push([i,0,k]);
                }
-               else if(k>=255&&k<=510){
+               else if(k>255&&k<=510){
                correspondenceTable.push([i,1,k])
                }
                else{
