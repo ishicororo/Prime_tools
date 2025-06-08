@@ -19,8 +19,11 @@ function execute(){
                if(k<=255){
                correspondenceTable.push([i,0,k]);
                }
-               else{
+               else if(k>=255&&k<=510){
                correspondenceTable.push([i,1,k])
+               }
+               else{
+               correspondenceTable.push([i,2,k])
                }
           }
      }
@@ -34,6 +37,10 @@ function execute(){
      const stringBodyBuffer=new Uint8Array(finalStringBinaryArarry.body).buffer;
      const newString=decoder.decode(stringBodyBuffer);
      console.log(newString);
+     for(let i=1;i<=Math.ceil(finalStringBinaryArarry.index.length/8);i++){
+          for(let j=0;j<=7;j++){
+          }
+     }
 }
 function returnCode(){
 }
