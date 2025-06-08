@@ -16,15 +16,7 @@ function execute(){
      };
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
           for(let j=Math.floor(255/keyBinaryArrayBuffer.length)*i,k=keyBinaryArrayBuffer[i];j<=Math.floor(255/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
-               if(k<=255){
-               correspondenceTable.push([i,0,k]);
-               }
-               else if(k>255&&k<=510){
-               correspondenceTable.push([i,1,k-255])
-               }
-               else{
-               correspondenceTable.push([i,2,k-510])
-               }
+               correspondenceTable.push([i,Math.ceil(k/255)-1,k-255*(Math.ceil(k/255)-1)]);
           }
      }
      console.log(keyBinaryArrayBuffer);
