@@ -33,6 +33,7 @@ function execute(){
      }
      const stringBodyBuffer=new Uint8Array(finalStringBinaryArarry.body).buffer;
      const newString=decoder.decode(stringBodyBuffer);
+     console.log(newString);
 }
 function returnCode(){
 }
