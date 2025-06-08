@@ -20,10 +20,10 @@ function execute(){
                correspondenceTable.push([i,0,k]);
                }
                else if(k>255&&k<=510){
-               correspondenceTable.push([i,1,k])
+               correspondenceTable.push([i,1,k-255])
                }
                else{
-               correspondenceTable.push([i,2,k])
+               correspondenceTable.push([i,2,k-510])
                }
           }
      }
