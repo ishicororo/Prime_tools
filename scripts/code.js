@@ -28,7 +28,7 @@ function execute(){
           finalStringBinaryArarry.body.push(correspondenceTable[i][2]);
      }
      const stringBodyBuffer=new Uint8Array(finalStringBinaryArarry.body).buffer;
-     const newString=decoder.decode(stringBodyBuffer);
+     let newString=decoder.decode(stringBodyBuffer);
      for(let i=0;i<=finalStringBinaryArarry.length-1;i++){
           newStringArray.push(String.fromCodePoint(finalStringBinaryArarry[i]));
      }
