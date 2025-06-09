@@ -29,6 +29,7 @@ function execute(){
      }
      const stringBodyBuffer=new Uint8Array(finalStringBinaryArarry.body).buffer;
      let newString=decoder.decode(stringBodyBuffer);
+     console.log(newString);
      for(let i=0;i<=finalStringBinaryArarry.length-1;i++){
           newStringArray.push(String.fromCodePoint(finalStringBinaryArarry[i]));
      }
