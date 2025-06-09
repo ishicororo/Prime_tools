@@ -15,8 +15,8 @@ function execute(){
           body:[],
      };
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
-          for(let j=Math.floor(255/keyBinaryArrayBuffer.length)*i,k=keyBinaryArrayBuffer[i];j<=Math.floor(255/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
-               correspondenceTable.push([i,k]);
+          for(let j=Math.floor(65535/keyBinaryArrayBuffer.length)*i,k=keyBinaryArrayBuffer[i];j<=Math.floor(65535/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
+               correspondenceTable.push([i,k+keyBinaryArrayBuffer[i]]);
           }
      }
      console.log(keyBinaryArrayBuffer);
@@ -25,8 +25,8 @@ function execute(){
           finalStringBinaryArarry.index.push(correspondenceTable[i][0]);
           finalStringBinaryArarry.body.push(correspondenceTable[i][1]);
      }
-     for(let i=0;i<=finalStringBinaryArarry.length-1;i++){
-          newStringArray.push(String.fromCodePoint(finalStringBinaryArarry[i]));
+     for(let i=0;i<=finalStringBinaryArarry.body.length-1;i++){
+          newStringArray.push(String.fromCodePoint(finalStringBinaryArarry.body[i]));
      }
      newString=newStringArray.join("");
      console.log(newString);
