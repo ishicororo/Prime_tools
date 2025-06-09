@@ -6,7 +6,7 @@ const codeVariables={
 function execute(){
      const encoder=new TextEncoder();
      const decoder=new TextDecoder();
-     const stringBinaryArrayBuffer=encoder.encode(codeVariables.codeText.value);
+     const stringBinaryArrayBuffer=Array.from(codeVariables.codeText).map(i=>i.codePointAt(0).toString(16));
      const keyBinaryArrayBuffer=encoder.encode(codeVariables.codeKey.value);
      let correspondenceTable=[[0,0]];
      let newStringArray=[];
@@ -28,7 +28,7 @@ function execute(){
      for(let i=0;i<=finalStringBinaryArarry.body.length-1;i++){
           newStringArray.push(String.fromCodePoint(finalStringBinaryArarry.body[i]));
      }
-     newString=newStringArray.join("");
+     const newString=newStringArray.join("");
      console.log(newString);
      for(let i=1;i<=Math.ceil(finalStringBinaryArarry.index.length/8);i++){
           for(let j=0;j<=7;j++){
