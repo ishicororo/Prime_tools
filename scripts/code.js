@@ -8,28 +8,23 @@ function execute(){
      const decoder=new TextDecoder();
      const stringBinaryArrayBuffer=encoder.encode(codeVariables.codeText.value);
      const keyBinaryArrayBuffer=encoder.encode(codeVariables.codeKey.value);
-     let correspondenceTable=[[0,0,0]];
+     let correspondenceTable=[[0,0]];
      let newStringArray=[];
      let finalStringBinaryArarry={
-          where:[],
           index:[],
           body:[],
      };
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
           for(let j=Math.floor(255/keyBinaryArrayBuffer.length)*i,k=keyBinaryArrayBuffer[i];j<=Math.floor(255/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
-               correspondenceTable.push([i,Math.ceil(k/255)-1,k-255*(Math.ceil(k/255)-1)]);
+               correspondenceTable.push([i,k]);
           }
      }
      console.log(keyBinaryArrayBuffer);
      console.log(correspondenceTable);
      for(let i of stringBinaryArrayBuffer){
-          finalStringBinaryArarry.where.push(correspondenceTable[i][0]);
-          finalStringBinaryArarry.index.push(correspondenceTable[i][1]);
-          finalStringBinaryArarry.body.push(correspondenceTable[i][2]);
+          finalStringBinaryArarry.index.push(correspondenceTable[i][0]);
+          finalStringBinaryArarry.body.push(correspondenceTable[i][1]);
      }
-     const stringBodyBuffer=new Uint8Array(finalStringBinaryArarry.body).buffer;
-     let newString=decoder.decode(stringBodyBuffer);
-     console.log(newString);
      for(let i=0;i<=finalStringBinaryArarry.length-1;i++){
           newStringArray.push(String.fromCodePoint(finalStringBinaryArarry[i]));
      }
