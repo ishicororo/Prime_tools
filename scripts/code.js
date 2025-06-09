@@ -6,7 +6,7 @@ const codeVariables={
 function execute(){
      const encoder=new TextEncoder();
      const decoder=new TextDecoder();
-     const stringBinaryArrayBuffer=Array.from(codeVariables.codeText).map(i=>i.codePointAt(0).toString(16));
+     const stringBinaryArrayBuffer=Array.from(codeVariables.codeText).map(i=>Number(i.codePointAt(0).toString(16)));
      const keyBinaryArrayBuffer=encoder.encode(codeVariables.codeKey.value);
      let correspondenceTable=[[0,0]];
      let newStringArray=[];
@@ -16,7 +16,7 @@ function execute(){
      };
      for(let i=0;i<keyBinaryArrayBuffer.length;i++){
           for(let j=Math.floor(65535/keyBinaryArrayBuffer.length)*i,k=keyBinaryArrayBuffer[i];j<=Math.floor(65535/keyBinaryArrayBuffer.length)*(i+1);j++,k=foundation.nextPrime(k,1)){
-               correspondenceTable.push([i,k+keyBinaryArrayBuffer[i]]);
+               correspondenceTable.push([i,k+keyBinaryArrayBuffer+i]);
           }
      }
      console.log(keyBinaryArrayBuffer);
