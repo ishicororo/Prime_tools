@@ -9,6 +9,7 @@ function execute(){
      const stringBinaryArrayBuffer=encoder.encode(codeVariables.codeText.value);
      const keyBinaryArrayBuffer=encoder.encode(codeVariables.codeKey.value);
      let correspondenceTable=[[0,0,0]];
+     let newStringArray=[];
      let finalStringBinaryArarry={
           where:[],
           index:[],
@@ -28,6 +29,10 @@ function execute(){
      }
      const stringBodyBuffer=new Uint8Array(finalStringBinaryArarry.body).buffer;
      const newString=decoder.decode(stringBodyBuffer);
+     for(let i=0;i<=finalStringBinaryArarry.length-1;i++){
+          newStringArray.push(String.fromCodePoint(finalStringBinaryArarry[i]));
+     }
+     newString=newStringArray.join("");
      console.log(newString);
      for(let i=1;i<=Math.ceil(finalStringBinaryArarry.index.length/8);i++){
           for(let j=0;j<=7;j++){
