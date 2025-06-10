@@ -6,7 +6,7 @@ const codeVariables={
 function execute(){
      const encoder=new TextEncoder();
      const decoder=new TextDecoder();
-     const stringBinaryArrayBuffer=Array.from(codeVariables.codeText.value7).map(i=>Number(i.codePointAt(0).toString(16)));
+     const stringBinaryArrayBuffer=Array.from(codeVariables.codeText.value).map(i=>Number(i.codePointAt(0).toString(16)));
      const keyBinaryArrayBuffer=encoder.encode(codeVariables.codeKey.value);
      let correspondenceTable=[[0,0]];
      let newStringArray=[];
